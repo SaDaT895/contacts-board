@@ -4,7 +4,7 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { first, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Request } from 'express';
 
 @Injectable()
@@ -22,7 +22,9 @@ export class AuthGuard implements CanActivate {
 
     const isExpired = Date.now() > hubspot.expiresAt;
     if (isExpired) {
-      throw new UnauthorizedException('HubSpot token expired.');
+      throw new UnauthorizedException(
+        'HubSpot token expired. Please log in again',
+      );
     }
 
     return true;

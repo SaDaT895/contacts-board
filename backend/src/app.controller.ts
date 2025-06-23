@@ -45,6 +45,7 @@ export class AppController {
       refresh_token: data.refresh_token,
       expires_in: data.expires_in,
     };
+    //console.log(data.access_token);
     res.redirect('http://localhost:5173/contacts');
   }
 
