@@ -43,7 +43,7 @@ export class AppController {
     req.session.hubspot = {
       access_token: data.access_token,
       refresh_token: data.refresh_token,
-      expires_in: data.expires_in,
+      expires_in: Date.now() + data.expires_in,
     };
     //console.log(data.access_token);
     res.redirect('http://localhost:5173/contacts');
