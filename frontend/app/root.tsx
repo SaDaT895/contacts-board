@@ -9,6 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { AppBar, Container, GlobalStyles, StyledEngineProvider, Toolbar, Typography } from "@mui/material";
+import ContactsIcon from "@mui/icons-material/Contacts";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -19,7 +21,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
   },
 ];
 
@@ -33,7 +35,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <StyledEngineProvider enableCssLayer>
+          <GlobalStyles styles="@layer theme, base, mui, component, utilities;" />
+          <AppBar position="static" color="transparent">
+            <Container maxWidth="xl" sx={{ ml: 0 }}>
+              <Toolbar disableGutters>
+                <ContactsIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} />
+                <Typography variant="h4">ContactsBoard</Typography>
+              </Toolbar>
+            </Container>
+          </AppBar>
+          {children}
+        </StyledEngineProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
