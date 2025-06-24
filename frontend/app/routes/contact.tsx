@@ -1,6 +1,6 @@
 import type { Route } from ".react-router/types/app/routes/+types/contact";
 import ContactCard from "~/components/contact-card";
-import type { Contact, ContactRecord } from "~/contact";
+import type { Contact, ContactRecord } from "~/models/contact";
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
     const res = await fetch(`http://localhost:3000/contacts/${params.id}`, {

@@ -1,7 +1,7 @@
 import { Box, Button, Dialog, DialogContent, DialogTitle, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 import { Form, useNavigate } from "react-router";
-import type { Contact } from "~/contact";
+import type { Contact } from "~/models/contact";
 
 export default function ContactForm({ contact }: { contact?: Contact }) {
     const [open, setOpen] = useState(true)

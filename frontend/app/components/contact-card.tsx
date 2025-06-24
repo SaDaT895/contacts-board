@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardHeader, Dialog, Divider, Typography } from "@mui/material";
 import { useState } from "react";
 import { Form, useFetcher, useNavigate } from "react-router";
-import type { ContactRecord } from "~/contact";
+import type { ContactRecord } from "~/models/contact";
 
 export default function ContactCard({ contact }: { contact: ContactRecord }) {
     const [open, setOpen] = useState<boolean>(true)

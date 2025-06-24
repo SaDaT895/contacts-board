@@ -1,7 +1,7 @@
 import type { Route } from ".react-router/types/app/routes/+types/form"
 import { redirect } from "react-router"
 import ContactForm from "~/components/form"
-import type { Contact } from "~/contact"
+import type { Contact } from "~/models/contact"
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
     const res = await fetch(`http://localhost:3000/contacts/${params.id}`, {

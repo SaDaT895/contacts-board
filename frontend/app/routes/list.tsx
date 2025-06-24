@@ -1,7 +1,7 @@
 import type { Route } from ".react-router/types/app/routes/+types/list"
 import { redirect } from "react-router";
 import { ContactsTable } from "~/components/table";
-import type { Contact } from "~/contact";
+import type { Contact } from "~/models/contact";
 
 
 export async function clientLoader() {
