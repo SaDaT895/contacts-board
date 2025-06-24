@@ -3,7 +3,7 @@ import type { Contact } from "~/contact";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Form, useFetcher } from "react-router";
+import { useFetcher } from "react-router";
 
 export function ContactsTable({ contacts }: { contacts: Contact[] }) {
     let fetcher = useFetcher();
