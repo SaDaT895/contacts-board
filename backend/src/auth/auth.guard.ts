@@ -11,10 +11,10 @@ import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(
-    private httpService: HttpService,
-    private configService: ConfigService,
-  ) {}
+  // constructor(
+  //   private httpService: HttpService,
+  //   private configService: ConfigService,
+  // ) {}
   async canActivate(context: ExecutionContext) {
     const req = context.switchToHttp().getRequest<Request>();
 

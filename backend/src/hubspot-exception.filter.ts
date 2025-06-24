@@ -8,7 +8,6 @@ export class HubspotExceptionFilter<T> implements ExceptionFilter {
   catch(exception: ApiException<any>, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
-    const request = ctx.getRequest<Request>();
 
     response.status(exception.code).json(exception);
   }

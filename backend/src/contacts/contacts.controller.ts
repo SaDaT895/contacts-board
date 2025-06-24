@@ -17,7 +17,7 @@ import { UpdateContactDto } from './dto/update-contact.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { Request, Response } from 'express';
 import { Client } from '@hubspot/api-client';
-import { HubspotExceptionFilter } from 'src/hubspot-exception/hubspot-exception.filter';
+import { HubspotExceptionFilter } from 'src/hubspot-exception.filter';
 
 @Controller('contacts')
 @UseGuards(AuthGuard)
