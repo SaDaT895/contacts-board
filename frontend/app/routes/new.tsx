@@ -17,7 +17,7 @@ export async function clientAction({ request }: Route.ClientActionArgs) {
         }
     });
     if (res.status === 201) return redirect('/contacts')
-    alert(res.statusText)
+    alert(`${res.statusText}: ${await res.json().then(e => e.message ? e.message : e.body.message)}`)
     return redirect('/')
 }
 

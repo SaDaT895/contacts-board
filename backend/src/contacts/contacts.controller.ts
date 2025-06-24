@@ -8,15 +8,20 @@ import {
   Delete,
   UseGuards,
   Req,
+  UseFilters,
+  HttpException,
+  Res,
 } from '@nestjs/common';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import { Client } from '@hubspot/api-client';
+import { HubspotExceptionFilter } from 'src/hubspot-exception/hubspot-exception.filter';
 
 @Controller('contacts')
 @UseGuards(AuthGuard)
+@UseFilters(HubspotExceptionFilter)
 export class ContactsController {
   constructor() {}
 

@@ -12,9 +12,8 @@ export async function clientLoader() {
         const contacts: Array<Contact> = await res.json().then(res => res.map(r => ({ id: r.id, ...r.properties })))
         return contacts
     }
-    alert(res.statusText)
+    alert(`${res.statusText}: ${await res.json().then(e => e.message)}`)
     return redirect('/')
-
 }
 
 export default function List({

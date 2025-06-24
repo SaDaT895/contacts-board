@@ -1,5 +1,4 @@
 import type { Route } from ".react-router/types/app/routes/+types/form"
-import { Dialog } from "@mui/material"
 import { redirect } from "react-router"
 import ContactForm from "~/components/form"
 import type { Contact } from "~/contact"
@@ -28,6 +27,8 @@ export async function clientAction({ params, request }: Route.ActionArgs) {
         }
     });
     if (res.ok) return redirect('/contacts')
+    alert(`${res.statusText}: ${await res.json().then(e => e.message ? e.message : e.body.message)}`)
+    return redirect('/')
 }
 
 export default function Form({ loaderData }: Route.ComponentProps) {
