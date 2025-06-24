@@ -35,18 +35,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <StyledEngineProvider enableCssLayer>
-          <GlobalStyles styles="@layer theme, base, mui, component, utilities;" />
-          <AppBar position="static" color="transparent">
-            <Container maxWidth="xl" sx={{ ml: 0 }}>
-              <Toolbar disableGutters>
-                <ContactsIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} />
-                <Typography variant="h4">ContactsBoard</Typography>
-              </Toolbar>
-            </Container>
-          </AppBar>
-          {children}
-        </StyledEngineProvider>
+        <AppBar position="static" color="transparent">
+          <Container maxWidth="xl" sx={{ ml: 0 }}>
+            <Toolbar disableGutters>
+              <ContactsIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} />
+              <Typography variant="h4">ContactsBoard</Typography>
+            </Toolbar>
+          </Container>
+        </AppBar>
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>

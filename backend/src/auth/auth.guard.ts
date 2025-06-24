@@ -41,7 +41,7 @@ export class AuthGuard implements CanActivate {
 
       const newToken = data;
       hubspot.accessToken = newToken.access_token;
-      hubspot.expiresAt = Date.now() + newToken.expires_in;
+      hubspot.expiresAt = Date.now() + newToken.expires_in * 1000;
       if (newToken.refresh_token) {
         hubspot.refreshToken = newToken.refresh_token;
       }

@@ -5,19 +5,17 @@ import type { Contact } from "~/contact";
 
 
 export async function clientLoader() {
-    try {
-        const res = await fetch('http://localhost:3000/contacts', {
-            credentials: 'include'
-        })
-        console.log(res.statusText)
+    const res = await fetch('http://localhost:3000/contacts', {
+        credentials: 'include'
+    })
+    if (res.ok) {
         const contacts: Array<Contact> = await res.json().then(res => res.map(r => ({ id: r.id, ...r.properties })))
         return contacts
-    } catch (error) {
-        alert(error)
     }
+    alert(res.statusText)
+    return redirect('/')
+
 }
-
-
 
 export default function List({
     loaderData

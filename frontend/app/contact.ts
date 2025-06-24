@@ -5,7 +5,7 @@ export interface Contact {
   email: string;
 }
 
-export interface ContactCard extends Contact {
+export interface ContactRecord extends Contact {
   createdate: string;
   lastmodifieddate: string;
 }

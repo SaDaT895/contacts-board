@@ -12,5 +12,6 @@ export default [
     route(":id", "routes/contact.tsx"),
     route(":id/edit", "routes/form.tsx"),
     route(":id/delete", "routes/delete.ts"),
+    route("new", "routes/new.tsx"),
   ]),
 ] satisfies RouteConfig;
