@@ -1,0 +1,16 @@
+version: '3.8'
+
+name: ContactsBoard
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+  
+  backend:
+    build:
+      context: ./backend
+    ports: 
+      - "3000:3000" 
