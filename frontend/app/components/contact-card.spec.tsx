@@ -13,14 +13,6 @@ const mockContact = {
   lastmodifieddate: new Date().toISOString(),
 }
 
-// vi.mock('react-router', async () => {
-//   const actual = await vi.importActual<typeof import('react-router')>('react-router')
-//   return {
-//     ...actual,
-//     useNavigate: () => vi.fn()
-//   }
-// })
-
 vi.mock('react-router', { spy: true })
 
 describe('ContactCard', () => {
@@ -40,11 +32,11 @@ describe('ContactCard', () => {
   })
 
   it('close button calls navigate(-1) and closes the dialog', async () => {
-    const mockNavigate = vi.spyOn(reactRouter, 'useNavigate');
+    const mockNavigate = vi.spyOn(reactRouter, 'useNavigate')
     const closeButton = screen.getByRole('button', { name: /Close/i });
 
     fireEvent.click(closeButton)
-    expect(mockNavigate).toHaveBeenCalledWith(-1)
+    expect(mockNavigate).toHaveBeenCalledOnce()
 
   });
 

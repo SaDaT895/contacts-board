@@ -22,7 +22,6 @@ export default function ContactCard({ contact }: { contact: ContactRecord }) {
                 <Typography>Email: {contact.email}</Typography>
                 <Typography variant="body2">Created at: {new Date(contact.createdate).toLocaleString('en-NL')}</Typography>
                 <Typography variant="body2">Last updated at: {new Date(contact.lastmodifieddate).toLocaleString('en-NL')}</Typography>
-
             </CardContent>
             <CardActions>
                 <Form action='edit'>
