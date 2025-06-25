@@ -9,10 +9,10 @@ export async function clientLoader() {
         credentials: 'include'
     })
     if (res.ok) {
-        const contacts: Array<Contact> = await res.json().then(res => res.map(r => ({ id: r.id, ...r.properties })))
+        const contacts: Array<Contact> = await res.json().then(res => res.map((r: { id: number; properties: any; }) => ({ id: r.id, ...r.properties })))
         return contacts
     }
-    alert(`${res.statusText}: ${await res.json().then(e => e.message)}`)
+    alert(`${res.statusText}: ${await res.json().then(e => e.message ?? e.body.message)}`)
     return redirect('/')
 }
 
