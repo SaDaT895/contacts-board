@@ -1,20 +1,13 @@
-import { HttpService } from '@nestjs/axios';
 import {
   CanActivate,
   ExecutionContext,
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { Request, Response } from 'express';
-import { firstValueFrom } from 'rxjs';
+import { Request } from 'express';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  // constructor(
-  //   private httpService: HttpService,
-  //   private configService: ConfigService,
-  // ) {}
   async canActivate(context: ExecutionContext) {
     const req = context.switchToHttp().getRequest<Request>();
 
