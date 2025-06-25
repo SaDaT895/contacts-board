@@ -9,6 +9,11 @@ For the sake of simplicity, the OAuth token from HubSpot is stored in session co
 Backend: 
 - Setup .env file (Check .env.example)
 - `nest start`
+- Test: `npm run test`
 
-Frotnend: `npm run dev`
+Frotnend: 
+- `npm run dev`
+- Test: `npm run test`
+
+OR start the whole app using docker: `docker compose up`
 
