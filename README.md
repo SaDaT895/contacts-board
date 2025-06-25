@@ -8,7 +8,7 @@ For the sake of simplicity, the OAuth token from HubSpot is stored in session co
 # Get Started Locally
 Backend: 
 - Setup .env file (Check .env.example)
-- nest start
+- `nest start`
 
-Frotnend: npm run dev
+Frotnend: `npm run dev`
 
