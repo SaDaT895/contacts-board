@@ -11,6 +11,7 @@ export default function ContactCard({ contact }: { contact: ContactRecord }) {
 
     const onClose = () => {
         setOpen(false);
+        navigate(-1)
     }
 
     return <Dialog open={open} onClose={() => navigate(-1)}>

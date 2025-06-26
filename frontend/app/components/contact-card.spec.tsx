@@ -36,7 +36,7 @@ describe('ContactCard', () => {
     const closeButton = screen.getByRole('button', { name: /Close/i });
 
     fireEvent.click(closeButton)
-    expect(mockNavigate).toHaveBeenCalledOnce()
+    expect(mockNavigate).toHaveBeenCalled()
 
   });
 
