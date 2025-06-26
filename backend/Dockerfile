@@ -1,8 +1,10 @@
 FROM node:20
 
-COPY . .
+COPY package*.json .
 
 RUN npm ci
+
+COPY . .
 
 EXPOSE 3000
 
