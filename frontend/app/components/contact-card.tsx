@@ -11,10 +11,10 @@ export default function ContactCard({ contact }: { contact: ContactRecord }) {
 
     const onClose = () => {
         setOpen(false);
-        navigate(-1)
+        navigate('/contacts')
     }
 
-    return <Dialog open={open} onClose={() => navigate(-1)}>
+    return <Dialog open={open} onClose={onClose}>
         <Card>
             <CardHeader title={contact.id} />
             <Divider />
@@ -29,7 +29,7 @@ export default function ContactCard({ contact }: { contact: ContactRecord }) {
                     <Button type="submit">Edit</Button>
                 </Form>
                 <fetcher.Form action='delete' method="post">
-                    <Button type="submit">{busy ? "Deleting..." : "Delete"}</Button>
+                    <Button type="submit" disabled={busy}>{busy ? "Deleting..." : "Delete"}</Button>
                 </fetcher.Form>
                 <Button onClick={onClose}>Close</Button>
             </CardActions>

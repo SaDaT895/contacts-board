@@ -40,15 +40,20 @@ describe('ContactCard', () => {
 
   });
 
-  // it('clicking the backdrop (Dialog onClose) also navigates back', () => {
-  //   const dialog = screen.getByRole('dialog');
-  //   const mockNavigate = vi.spyOn(reactRouter, 'useNavigate');
+  it('clicking the backdrop (Dialog onClose) also navigates back', () => {
+    const mockNavigate = vi.spyOn(reactRouter, 'useNavigate');
+    const dialog = screen.getByRole('dialog');
 
-  //   expect(dialog).toBeVisible();
-  //   expect(dialog).toHaveAttribute('role', 'dialog');
-  //   expect(dialog).toHaveTextContent(/Name:/);
-  //   expect(mockNavigate).toHaveBeenCalledWith(-1);
-  // });
+    expect(dialog).toBeVisible();
+    expect(dialog).toHaveAttribute('role', 'dialog');
+    expect(dialog).toHaveTextContent(/Name:/);
+
+    const backdrop = document.querySelector('.MuiBackdrop-root');
+    expect(backdrop).toBeTruthy();
+    fireEvent.click(backdrop!)
+
+    expect(mockNavigate).toHaveBeenCalled();
+  });
 
 
   it('renders a delete button inside a form with method="post" and action="delete"', () => {
@@ -62,4 +67,6 @@ describe('ContactCard', () => {
   it('renders an Edit button', () => {
     expect(screen.getByRole('button', { name: /edit/i })).toBeInTheDocument();
   });
+
+
 })
